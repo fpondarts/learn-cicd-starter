@@ -24,7 +24,7 @@ func TestGetAPIKeyNoHeader(t *testing.T) {
 
 	got, err := GetAPIKey(*headers)
 
-	if got != "" && err == nil {
+	if got != "" || err == nil {
 		t.Fatalf("Expected error to be thrown")
 	}
 }
