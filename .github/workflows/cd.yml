@@ -17,3 +17,9 @@ jobs:
 
       - name: Build
         run: ./scripts/buildprod.sh
+
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v3'
+
+      - name: Submit artifact
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/glassy-augury-493419-n2/notely-ar-repo/notely:latest
